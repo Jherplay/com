@@ -1,0 +1,336 @@
+html, body {
+  overflow-x: hidden;
+}
+
+/* ======== 🔹 RESET BÁSICO ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======== 🔹 ESTILO GENERAL DEL BODY ======== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url('../assets/fondo.png') center/cover no-repeat fixed #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ======== 🔹 BOTÓN HAMBURGUESA ======== */
+.hamburguesa {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+/* ======== 🔹 BOTÓN DE CAMBIO DE TEMA ======== */
+.btn-tema {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  padding: 6px 12px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.3s;
+}
+.btn-tema:hover {
+  background-color: #333;
+}
+
+/* ======== 🔹 MENÚ LATERAL ======== */
+.menu-lateral {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+.menu-lateral.activo {
+  left: 0;
+}
+.menu-lateral a {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+.menu-lateral a:hover {
+  background: #222;
+}
+
+/* ======== 🔹 SUBMENÚ ======== */
+.submenu .opciones-submenu {
+  display: none;
+  flex-direction: column;
+  background: #222;
+  padding-left: 15px;
+}
+.submenu:hover .opciones-submenu {
+  display: flex;
+}
+.opciones-submenu a.activo {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* ======== 🔹 CONTENIDO PRINCIPAL ======== */
+main {
+  flex: 1;
+  padding: 80px 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Ajusta el main cuando el menú está activo (opcional) */
+.menu-lateral.activo ~ main {
+  margin-left: 260px; /* o 250px para que no haya salto */
+}
+
+/* ======== 🔹 BIO LATERAL ======== */
+.bio {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  max-width: 300px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  z-index: 100;
+}
+.bio h2 {
+  margin-bottom: 10px;
+}
+
+/* ======== 🔹 FORMULARIOS ======== */
+.form-box {
+  display: none;
+  max-width: 450px;
+  margin: 0 0 40px 60px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.98);
+}
+.form-box[style*="display: block"] {
+  opacity: 1;
+  transform: scale(1);
+}
+.form-box h2 {
+  margin-bottom: 15px;
+}
+.form-box input,
+.form-box button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.form-box button {
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+}
+.form-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.form-box input:focus {
+  outline: none;
+  border-color: #00b4ff;
+  background: rgba(255, 255, 255, 0.15);
+}
+.form-box button {
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+.form-box button:hover {
+  background: linear-gradient(135deg, #0056b3, #003f8a);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* ======== 🔹 BLOQUES DE RESULTADOS ======== */
+.resultado,
+#resultado_btts,
+#resultado_goles,
+#resultado85,
+#resultado95,
+#resultado {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+/* ======== 🔹 ANIMACIÓN DE APARICIÓN ======== */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ======== 🔹 CONTENEDOR DE ANÁLISIS ======== */
+.contenedor-analisis {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.resultado {
+  position: absolute;
+  right: 170px;
+  top: 420px;
+  transform: translateY(-50%);
+  width: 400px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+h1 {
+  text-align: left;
+  font-family: 'Arial Black', Arial, sans-serif;
+  color: #fff;
+  margin-bottom: 30px;
+}
+/* Estilo general para el título h1 */
+h1 {
+  font-family: 'Arial Black', Arial, sans-serif; /* Fuente gruesa y sans-serif */
+  font-size: 1.8rem;                            /* Tamaño grande para destacar */
+  font-weight: 900;                             /* Peso máximo para negrita */
+  color: #ddd;                                  /* Color gris claro para el texto normal */
+  text-align: center;                           /* Centrar texto horizontalmente */
+  letter-spacing: 1.5px;                        /* Espacio entre letras para mejor lectura */
+  margin-bottom: 30px;                          /* Separación inferior para separar del contenido siguiente */
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: nowrap; /* permite que baje de línea pero solo si es necesario */
+  padding-right: 300px;
+}
+
+/* Estilos para la parte resaltada "Jher:" */
+.resaltar {
+  background: linear-gradient(270deg, #00bfff, #0077ff, #00ffff, #00bfff);  
+  /* Gradiente lineal con tonos azules y cyan, girado 270 grados (horizontal de derecha a izquierda) */
+  
+  background-size: 600% 600%;                  
+  /* Tamaño del fondo aumentado para poder animar el gradiente moviéndose a lo largo */
+  
+  -webkit-background-clip: text;               
+  /* Clip del fondo solo al texto (Safari y Chrome) para que el gradiente se aplique solo a las letras */
+  
+  -webkit-text-fill-color: transparent;        
+  /* Hace que el relleno de texto sea transparente para que se vea el fondo */
+  
+  background-clip: text;                        
+  /* Igual que -webkit-background-clip, para navegadores compatibles */
+  
+  animation: brillo 8s ease infinite;           
+  /* Aplica la animación llamada 'brillo' que dura 8 segundos, con transición suave, y se repite indefinidamente */
+  
+  display: inline-block;                         
+  /* Hace que el span sea inline pero con capacidad para aplicar animaciones y transformaciones */
+}
+
+/* Definición de la animación 'brillo' */
+@keyframes brillo {
+  0% { background-position: 0% 50%; }          
+  /* Empieza con el gradiente posicionado al inicio horizontalmente, centro vertical */
+  
+  50% { background-position: 100% 50%; }       
+  /* A la mitad de la animación el gradiente se mueve totalmente al otro lado horizontalmente */
+  
+  100% { background-position: 0% 50%; }        
+  /* Finaliza regresando a la posición inicial para crear un ciclo infinito suave */
+}
+
+
+/* ======== 🔹 RESPONSIVE ======== */
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+    padding: 60px 15px 30px;
+  }
+  .menu-lateral {
+    position: fixed;
+    width: 80%;
+    left: -80%;
+    transition: left 0.3s ease;
+  }
+  .menu-lateral.activo {
+    left: 0;
+  }
+  header h1 {
+    font-size: 1.0rem;
+    margin-right: 0;
+    top: 0;
+  }
+  .bio,
+  .resultado {
+    position: static;
+    max-width: 100%;
+    width: 100%;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+  .contenedor-analisis {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .form-box {
+    margin: 0 auto 20px auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
