@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jher  Analizando Apuestas</title>
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+ 
+
+  <!-- Botón hamburguesa -->
+  <div class="hamburguesa" onclick="toggleMenu()">☰</div>
+
+  <!-- Menú lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="#">Inicio</a>
+    <div class="submenu">
+      <a class="principal">Análisis ▼</a>
+      <div class="opciones-submenu">
+        <a onclick="mostrarFormulario('form35')">+3.5 Corners</a>
+        <a onclick="mostrarFormulario('form95')">+9.5 Corners</a>
+        <a onclick="mostrarFormulario('form85')">+8.5 Corners</a>
+        <a onclick="mostrarFormulario('btts')">Ambos marcan</a>
+        <a onclick="mostrarFormulario('goles')">+2.5 goles</a>
+      </div>
+    </div>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <header>
+      <h1><span class="resaltar">Jher:</span> Tu Aliado en Apuestas Inteligentes</h1>
+ </header>
+
+    <!-- Sección Bio -->
+    <section class="bio">
+      <h2>Soy Jher</h2>
+      <p>
+        Apasionado por el fútbol, la estrategia y las estadísticas. Analizo partidos, resultados y tendencias<br>
+        para tomar decisiones más inteligentes al apostar.Esta página nace del deseo de compartir ese conocimiento contigo.¿Apostar? Sí, pero con lógica.
+      </p>
+    </section>
+
+    <!-- FORMULARIOS -->
+
+    <!-- +3.5 Corners -->
+    <div class="contenedor-analisis">
+    <div id="form35" class="form-box">
+      <h2>+3.5 Corners</h2>
+      <form onsubmit="event.preventDefault(); analizarCorners();">
+        <label for="favor5">Corners a favor del local (últimos 5 partidos)</label>
+        <input id="favor5" type="number" placeholder="Ej: 10" required />
+
+        <label for="favor3">Corners a favor del local (últimos 3 partidos como local)</label>
+        <input id="favor3" type="number" placeholder="Ej: 6" required />
+
+        <label for="favor_casa">Total de Corners a favor local (últimos 5 partidos como local)</label>
+        <input id="favor_casa" type="number" placeholder="Ej: 8" required />
+
+        <label for="contra5">Corners en contra del visitante (últimos 5 partidos)</label>
+        <input id="contra5" type="number" placeholder="Ej: 7" required />
+
+        <label for="contra3">Corners en contra del visitante (últimos 3 partidos)</label>
+        <input id="contra3" type="number" placeholder="Ej: 5" required />
+
+        <button type="submit">Analizar</button>
+      </form>
+       </div>
+      
+    </div>
+
+
+    <!-- +9.5 Corners -->
+    <div class="contenedor-analisis">
+    <div id="form95" class="form-box">
+      <h2>+9.5 Corners</h2>
+      <form onsubmit="event.preventDefault(); validarOver95Corners();">
+        <label for="favor_ultimos_10">Corners a favor del local (últimos 10 partidos)</label>
+        <input id="favor_ultimos_10" type="number" placeholder="Ej: 55" required />
+
+        <label for="contra_ultimos_10">Corners en contra del local (últimos 10 partidos)</label>
+        <input id="contra_ultimos_10" type="number" placeholder="Ej: 50" required />
+
+        <label for="favor_ultimos_5_casa">Corners a favor del local (últimos 5 partidos como local)</label>
+        <input id="favor_ultimos_5_casa" type="number" placeholder="Ej: 28" required />
+
+        <label for="favor_ultimos_3">Corners a favor del local (últimos 3 partidos)</label>
+        <input id="favor_ultimos_3" type="number" placeholder="Ej: 15" required />
+
+        <label for="contra_visitante_ultimos_10">Corners en contra del visitante (últimos 10 partidos)</label>
+        <input id="contra_visitante_ultimos_10" type="number" placeholder="Ej: 52" required />
+
+        <label for="contra_visitante_ultimos_5">Corners en contra del visitante (últimos 5 partidos como visitante)</label>
+        <input id="contra_visitante_ultimos_5" type="number" placeholder="Ej: 27" required />
+
+        <label for="contra_visitante_ultimos_3">Corners en contra del visitante (últimos 3 partidos)</label>
+        <input id="contra_visitante_ultimos_3" type="number" placeholder="Ej: 14" required />
+
+        <button type="submit">Analizar</button>
+      </form>
+      </div>
+      
+    </div>
+
+    <!-- +8.5 Corners -->
+    <div class="contenedor-analisis">
+    <div id="form85" class="form-box">
+      <h2>+8.5 Corners</h2>
+      <form onsubmit="event.preventDefault(); validarOver85Corners();">
+        <label for="favor_ultimos_10_partidos">Corners a favor del local (últimos 10 partidos)</label>
+        <input id="favor_ultimos_10_partidos" type="number" placeholder="Ej: 55" required />
+
+        <label for="contra_ultimos_10_partidos">Corners en contra del local (últimos 10 partidos)</label>
+        <input id="contra_ultimos_10_partidos" type="number" placeholder="Ej: 50" required />
+
+        <label for="favor_ultimos_5_casa_partidos">Corners a favor del local (últimos 5 partidos como local)</label>
+        <input id="favor_ultimos_5_casa_partidos" type="number" placeholder="Ej: 28" required />
+
+        <label for="favor_ultimos_3_partidos">Corners a favor del local (últimos 3 partidos)</label>
+        <input id="favor_ultimos_3_partidos" type="number" placeholder="Ej: 15" required />
+
+        <label for="contra_visitante_ultimos_10_partidos">Corners en contra del visitante (últimos 10 partidos)</label>
+        <input id="contra_visitante_ultimos_10_partidos" type="number" placeholder="Ej: 52" required />
+
+        <label for="contra_visitante_ultimos_5_partidos">Corners en contra del visitante (últimos 5 partidos como visitante)</label>
+        <input id="contra_visitante_ultimos_5_partidos" type="number" placeholder="Ej: 27" required />
+
+        <label for="contra_visitante_ultimos_3_partidos">Corners en contra del visitante (últimos 3 partidos)</label>
+        <input id="contra_visitante_ultimos_3_partidos" type="number" placeholder="Ej: 14" required />
+
+        <button type="submit">Analizar</button>
+      </form>
+    </div>
+    
+    </div>
+
+    <!-- Ambos marcan -->
+     <div class="contenedor-analisis">
+    <div id="btts" class="form-box">
+      <h2>Ambos Equipos Marcan</h2>
+      <form onsubmit="event.preventDefault(); analizarBTTS();">
+        <label for="goles_local_ultimos_10">Goles del local en últimos 10 partidos</label>
+        <input id="goles_local_ultimos_10" type="number" placeholder="Ej: 20" required />
+
+        <label for="goles_local_ultimos_5">Goles del local en últimos 5 partidos</label>
+        <input id="goles_local_ultimos_5" type="number" placeholder="Ej: 9" required />
+
+        <label for="goles_local_ultimos_3">Goles del local en últimos 3 partidos</label>
+        <input id="goles_local_ultimos_3" type="number" placeholder="Ej: 5" required />
+
+        <label for="goles_visitante_ultimos_10">Goles del visitante en últimos 10 partidos</label>
+        <input id="goles_visitante_ultimos_10" type="number" placeholder="Ej: 18" required />
+
+        <label for="goles_visitante_ultimos_5">Goles del visitante en últimos 5 partidos</label>
+        <input id="goles_visitante_ultimos_5" type="number" placeholder="Ej: 7" required />
+
+        <label for="goles_visitante_ultimos_3">Goles del visitante en últimos 3 partidos</label>
+        <input id="goles_visitante_ultimos_3" type="number" placeholder="Ej: 4" required />
+
+        <button type="submit">Analizar</button>
+      </form>
+       </div>
+      
+    </div>
+
+    <!-- Más de 2.5 Goles -->
+    <div class="contenedor-analisis">
+    <div id="goles" class="form-box">
+      <h2>Más de 2.5 Goles</h2>
+      <form onsubmit="event.preventDefault(); analizarMas2_5Goles();">
+        <label for="goles_local_ultimos_10mas2_5">Goles del local en últimos 10 partidos</label>
+        <input id="goles_local_ultimos_10mas2.5" type="number" placeholder="Ej: 20" required />
+
+        <label for="goles_local_casa_ultimos_5mas2_5">Goles del local en últimos 5 partidos en casa</label>
+        <input id="goles_local_casa_ultimos_5mas2.5" type="number" placeholder="Ej: 9" required />
+
+        <label for="goles_local_total_ultimos_3mas2_5">Goles del local en últimos 3 partidos (hechos + recibidos)</label>
+        <input id="goles_local_total_ultimos_3mas2.5" type="number" placeholder="Ej: 5" required />
+
+        <label for="goles_h2h_ultimos_3mas2_5">Goles en últimos 3 enfrentamientos directos</label>
+        <input id="goles_h2h_ultimos_3mas2.5" type="number" placeholder="Ej: 7" required />
+
+        <label for="goles_visitante_ultimos_10mas2_5">Goles del visitante en últimos 10 partidos</label>
+        <input id="goles_visitante_ultimos_10mas2.5" type="number" placeholder="Ej: 18" required />
+
+        <label for="goles_visitante_fuera_ultimos_5mas2_5">Goles del visitante en últimos 5 fuera de casa</label>
+        <input id="goles_visitante_fuera_ultimos_5mas2.5" type="number" placeholder="Ej: 8" required />
+
+        <label for="goles_visitante_total_ultimos_3mas2_5">Goles del visitante en últimos 3 partidos (hechos + recibidos)</label>
+        <input id="goles_visitante_total_ultimos_3mas2.5" type="number" placeholder="Ej: 6" required />
+
+        <button type="submit">Analizar</button>
+      </form>
+       </div>
+       </div>
+      <div id="resultado_unico" class="resultado"></div>
+
+    
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script src="js/analisis.js"></script>
+  <script src="js/mas9_5corners.js"></script>
+  <script src="js/mas8_5corners.js"></script>
+  <script src="js/bbts.js"></script>
+  <script src="js/mas2_5goles.js"></script>
+
+</body>
+</html>
