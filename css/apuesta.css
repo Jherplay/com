@@ -1,0 +1,64 @@
+.apuesta-sugerida {
+  background: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad del 90% */
+  color: white; /* Texto en color blanco */
+  padding: 10px; /* Espaciado interno de 10px en todo el contenedor */
+  border-radius: 10px; /* Bordes redondeados con radio de 10px */
+  max-width: 500px; /* Ancho máximo de 500px (para que no sea muy grande) */
+  margin: -20px 10px 20px 30px; /* Margen: -20px arriba (lo sube), 10px a la derecha, 20px abajo, 70px a la izquierda */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); /* Sombra difusa alrededor con opacidad 70% */
+  text-align: center; /* Centra el texto horizontalmente */
+  overflow: hidden; /* Oculta el contenido que sobresalga del cuadro */
+}
+
+/* Franja de competición */
+.competicion {
+  background: linear-gradient(90deg, #ff0000, #ff6600); /* Degradado horizontal de rojo a naranja */
+  padding: 8px; /* Espaciado interno de 8px */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.2rem; /* Tamaño de letra 1.2 veces el tamaño base */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+}
+
+.partido {
+  display: flex; /* Coloca los elementos en una misma fila */
+  align-items: center; /* Centra verticalmente los elementos dentro de la fila */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  gap: 20px; /* Espacio de 20px entre cada elemento */
+  margin: 15px 0; /* 15px de margen arriba y abajo, 0 a los lados */
+}
+
+.equipo {
+  display: flex; /* Activa flexbox */
+  flex-direction: column; /* Coloca elementos uno debajo del otro (columna) */
+  align-items: center; /* Centra horizontalmente el contenido */
+  width: 40%; /* Cada equipo ocupa el 40% del ancho disponible */
+}
+
+.nombre-equipo {
+  font-weight: bold; /* Texto en negrita */
+  margin-top: 5px; /* Espacio superior de 5px */
+  text-align: center; /* Texto centrado */
+}
+
+/* Tamaño fijo para los escudos */
+.equipo img {
+  width: 60px; /* Ancho fijo de 60px */
+  height: 60px; /* Alto fijo de 60px */
+  object-fit: contain; /* Escala la imagen sin recortarla, manteniendo proporción */
+}
+
+.vs {
+  font-size: 2rem; /* Tamaño de fuente 2 veces el tamaño base */
+  font-weight: bold; /* Texto en negrita */
+  color: #fff; /* Color de texto blanco */
+}
+
+.pronostico {
+  margin-top: 15px; /* Espacio superior de 15px */
+  background: #bd1c1c; /* Fondo rojo oscuro */
+  padding: 8px; /* Espaciado interno de 8px */
+  border-radius: 5px; /* Bordes redondeados de 5px */
+  font-style: italic; /* Texto en cursiva */
+  color: #f5f3f8; /* Color de texto gris muy claro */
+}

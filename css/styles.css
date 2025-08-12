@@ -227,6 +227,7 @@ main {
 .resultado {
   position: absolute;
   right: 170px;
+  /*top: 620px;*/
   top: 420px;
   transform: translateY(-50%);
   width: 400px;
@@ -256,6 +257,7 @@ h1 {
   overflow-wrap: normal;
   white-space: nowrap; /* permite que baje de línea pero solo si es necesario */
   padding-right: 300px;
+   margin-right: 65px; /* ajusta este valor según lo necesites */
 }
 
 /* Estilos para la parte resaltada "Jher:" */

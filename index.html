@@ -33,6 +33,7 @@
   <!-- Contenido principal -->
   <main>
     <header>
+      <!-- Donde se insertará -->
       <!--<div id="apuesta-container"></div>-->
       <h1><span class="resaltar">Jher:</span> Tu Aliado en Apuestas Inteligentes</h1>
  </header>
@@ -200,6 +201,16 @@
        </div>
       <div id="resultado_unico" class="resultado"></div>
 
+      <script>
+         fetch('apuesta-sugerida.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('apuesta-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando apuesta sugerida:', error));
+      </script>
+
+
     
 
   </main>
@@ -214,4 +225,3 @@
 
 </body>
 </html>
-
