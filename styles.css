@@ -9,7 +9,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* ======== 🔹 ESTILO GENERAL DEL BODY ======== */
+/* ======== 🔹 ESTILO GENERAL DEL BODY ======= */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: url('../assets/fondo.png') center/cover no-repeat fixed #000;
@@ -227,6 +227,7 @@ main {
 .resultado {
   position: absolute;
   right: 170px;
+  /*top: 620px;*/
   top: 420px;
   transform: translateY(-50%);
   width: 400px;
@@ -334,3 +335,4 @@ h1 {
     max-width: 100%;
   }
 }
+
