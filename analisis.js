@@ -30,7 +30,7 @@ function analizarCorners() {
     const total5 = favor5 + contra5;
     const prom5 = (total5 / 5).toFixed(2);
     const total3 = favor3 + contra3;
-    const prom3 = (total3 / 3).toFixed(2);
+    const prom3 = (favor3 / 3).toFixed(2);
     const promFavorCasa = (favorCasa / 5).toFixed(2);
 
     const condiciones = [
@@ -75,3 +75,4 @@ Aquí no hay culpables, solo pasión por el juego. ⚽❤️
 
     mostrarResultado(html);
 }
+
