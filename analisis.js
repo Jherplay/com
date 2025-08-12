@@ -52,7 +52,7 @@ function analizarCorners() {
     ];
 
     const cumplidas = condiciones.filter(c => c).length;
-    const probabilidad = Math.min(95, 20 + cumplidas * 10);
+    const probabilidad = Math.min(95, 13 + cumplidas * 10);
 
     let semaforo = "";
     if (probabilidad >= 75) semaforo = "🟢 VERDE – Apuesta recomendada";
@@ -75,5 +75,3 @@ Aquí no hay culpables, solo pasión por el juego. ⚽❤️
 
     mostrarResultado(html);
 }
-
-

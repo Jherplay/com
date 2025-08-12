@@ -63,7 +63,7 @@ const nombres = [
 ];
 
   const cumplidas = condiciones.filter(c => c).length;
-  const probabilidad = Math.min(100, 20 + cumplidas * 15);
+  const probabilidad = Math.min(93, 13 + cumplidas * 15);
 
   let semaforo = "";
   if (probabilidad >= 85) semaforo = "🟢 VERDE – Apuesta recomendada";
