@@ -28,7 +28,7 @@ function analizarCorners() {
     // Cálculos
     const contraProm5 = (contra5 / 5).toFixed(2);
     const total5 = favor5 + contra5;
-    const prom5 = (total5 / 5).toFixed(2);
+    const prom5 = (favor5 / 5).toFixed(2);
     const total3 = favor3 + contra3;
     const prom3 = (favor3 / 3).toFixed(2);
     const promFavorCasa = (favorCasa / 5).toFixed(2);
@@ -75,4 +75,5 @@ Aquí no hay culpables, solo pasión por el juego. ⚽❤️
 
     mostrarResultado(html);
 }
+
 
